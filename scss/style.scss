@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap&subset=cyrillic-ext");
+@import "_reset";
+@import "_vars";
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.container {
+  max-width: 256rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.login {
+  background-color: $white;
+  width: 60rem;
+  padding: 2.6rem 4.5rem;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  @media screen and (max-width: 400px) {
+    padding: 2.6rem 2rem;
+  }
+  & > :nth-child(-n + 4) {
+    margin: 0 0 1.5rem 0;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 3.2rem;
+    text-align: center;
+    color: $blue;
+    @media screen and (max-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+  &__item:last-child {
+    margin: 3.6rem 0 0 0;
+  }
+}
+.input {
+  width: 100%;
+  border: 2px solid $darkGray;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: $darkGray;
+  &.isActive {
+    border: 2px solid $validation;
+  }
+}
+.label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: $blue;
+  margin: 0 0 1rem 0;
+  position: relative;
+  &.isActive {
+    color: $validation;
+  }
+}
+.validation {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.5rem 0 0 0;
+  color: $validation;
+}
+.item-email {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__input {
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+    &::placeholder {
+      font-weight: 500;
+      font-size: 2rem;
+      color: $gray;
+      @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__error {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 0 0 0;
+    color: $validation;
+    opacity: 0;
+    visibility: hidden;
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.item-password {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__input {
+    @media screen and (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+    &::placeholder {
+      font-weight: 500;
+      font-size: 2rem;
+      color: $gray;
+      @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__error {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 0 0 0;
+    color: $validation;
+    opacity: 0;
+    visibility: hidden;
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.item-checkbox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__box {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+  }
+  &__descr {
+    color: $darkGray;
+    user-select: none;
+    cursor: pointer;
+    padding-left: 3rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 1.1rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      border: 0.2rem solid $darkGray;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      border-radius: 0.5rem;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background-image: url("/img/arrow.svg");
+      background-position: 50%;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      opacity: 0;
+      border-radius: 0.5rem;
+    }
+  }
+  &__box:checked + label::before {
+    background-color: $blue;
+    border: 0.2rem solid $blue;
+  }
+  &__box:checked + label::after {
+    opacity: 1;
+  }
+  &__box + .isActive::before {
+    border: 0.2rem solid $validation;
+  }
+  &__link {
+    color: $darkGray;
+    border-bottom: 0.1rem solid $darkGray;
+    font-weight: 500;
+    font-size: 1.4rem;
+    z-index: 10;
+    @media screen and (max-width: 320px) {
+      font-size: 1.1rem;
+    }
+  }
+  &__error {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 0 0 0;
+    color: $validation;
+    opacity: 0;
+    visibility: hidden;
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.item-required {
+  &__text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: $blue;
+  }
+}
+.item-button {
+  display: flex;
+  justify-content: center;
+  &__btn {
+    font-size: 1.8rem;
+    color: $white;
+    background-color: $blue;
+    font-weight: 700;
+    padding: 1.4rem 6.6rem;
+    border-radius: 0.5rem;
+    letter-spacing: 0.1rem;
+    &:hover {
+      background-color: $blueHover;
+    }
+  }
+}

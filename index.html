@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="login" action="#" name="login" method="" novalidate>
+      <p class="login__title">Вход</p>
+      <div class="login__item">
+        <div class="item-email">
+          <label class="item-email__label label" for="emailID">Email *</label>
+          <input class="item-email__input input" id="emailID" type="email" name="emailName"
+            placeholder="Введите ваш Email" autocomplete="off" title="Введите ваш Email" tabindex="1">
+          <p class="item-email__error">Поле обязательно для заполнения</p>
+        </div>
+      </div>
+      <div class="login__item">
+        <div class="item-password">
+          <label class="item-password__label label" for="passwordID">Пароль *</label>
+          <input class="item-password__input input" id="passwordID" type="password" name="passwordName"
+            placeholder="Введите ваш пароль" autocomplete="off" title="Введите ваш пароль" tabindex="2">
+          <p class="item-password__error">Поле обязательно для заполнения</p>
+        </div>
+      </div>
+      <div class="login__item">
+        <div class="item-checkbox">
+          <input class="item-checkbox__box" type="checkbox" id="checkboxID" tabindex="3" name="checkboxName">
+          <label class="item-checkbox__descr" for="checkboxID">Я согласен с
+            <a class="item-checkbox__link" href="" target="_blank" title="Правила пользования приложением">Политикой
+              обработки личных данных *</a>
+          </label>
+          <p class="item-checkbox__error">Поле обязательно для заполнения</p>
+        </div>
+      </div>
+      <div class="login__item">
+        <div class="item-required">
+          <p class="item-required__text">* – поля обязательны для заполнения</p>
+        </div>
+      </div>
+      <div class="login__item">
+        <div class="item-button">
+          <button class="item-button__btn" type="submit" title="Регистрация" tabindex="4">Войти</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
